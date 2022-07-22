@@ -58,13 +58,15 @@ export default function Recorder() {
         flexGrow: "1",
         
         m: 1, // dis
-        p: 1, // ic
+        p: 0.5, // ic
         gap: 5, // icindeki componentler arasi
         boxShadow: 24, // max 24
-        borderRadius: 3,
+        borderRadius: 2,
 
-        bgcolor: "#d2d2d2",
-        color: "#2d2d2d",
+        bgcolor: "#B2F0C3",
+        color: '#6985B2',
+        fontSize:20
+        
       }}
     >
       <Content />

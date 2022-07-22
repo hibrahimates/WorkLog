@@ -26,6 +26,8 @@ export default function Tag() {
           onChange={handleChange}
           autoWidth
           label="Age"
+          sx={{width: '150px', bgcolor:'#E2F0DE'}}
+          
         >
           <TextField label="Create" variant="filled" />
 

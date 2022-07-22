@@ -13,7 +13,7 @@ export default function Content() {
       noValidate
       autoComplete="off"
     >
-      <TextField id="outlined-basic" label="What are you working on?" variant="outlined" />
+      <TextField id="outlined-basic" label="What are you working on?" variant="outlined" sx={{bgcolor:'#E2F0DE'}}/>
     
 
     </Box>

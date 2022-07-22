@@ -23,15 +23,20 @@ export default function Project() {
           onChange={handleChange}
           autoWidth
           label="Age"
+          sx={{bgcolor:'#E2F0DE'}}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={1042}>Projec 1</MenuItem>
-          <MenuItem value={2143}>Projec 2</MenuItem>
-          <MenuItem value={1231}>Projec 3</MenuItem>
-          <MenuItem value={2222}>Projec 4</MenuItem>
-          <MenuItem value={2223}>Projec 5</MenuItem>
+          <MenuItem value={1042}>Project 1</MenuItem>
+          <MenuItem value={2143}>A Project 2</MenuItem>
+          <MenuItem value={1231}>B Project 3</MenuItem>
+          <MenuItem value={2222}>C Project 4</MenuItem>
+          <MenuItem value={2223}>D Project 5</MenuItem>
+          <MenuItem value={1233}>10003416854</MenuItem>
+          <MenuItem value={1234}>Berkan'ın Project</MenuItem>
+          <MenuItem value={1235}>14003552342</MenuItem>
+          <MenuItem value={1236}>14001231234</MenuItem>
         </Select>
       </FormControl>
     </div>
