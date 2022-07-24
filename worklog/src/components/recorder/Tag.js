@@ -16,46 +16,43 @@ export default function Tag() {
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 180 }} size="large">
-        <InputLabel id="demo-simple-select-autowidth-label">Tag</InputLabel>
-        <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select"
-          value={age}
-          onChange={handleChange}
-          autoWidth
-          label="Age"
-          sx={{width: '150px', bgcolor:'#E2F0DE'}}
-          
-        >
-          <TextField label="Create" variant="filled" />
+    <FormControl sx={{  minWidth: 180 }} size="large">
+      <InputLabel id="demo-simple-select-autowidth-label">Tag</InputLabel>
+      <Select
+        labelId="demo-simple-select-autowidth-label"
+        id="demo-simple-select"
+        value={age}
+        onChange={handleChange}
+        autoWidth
+        label="Age"
+        sx={{ bgcolor: "#E2F0DE", gap: 100 }}
+      >
+        <TextField label="Create" variant="filled" />
 
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
 
-          <MenuItem value="">
-            <MenuItem value={11}>
-              <LocalOfferIcon />
-              Tag 1
-            </MenuItem>
+        <MenuItem value="">
+          <MenuItem value={11}>
+            <LocalOfferIcon />
+            Tag 1
           </MenuItem>
+        </MenuItem>
 
-          <MenuItem value="">
-            <MenuItem value={12}>
-              <LocalOfferIcon />
-              Tag 2
-            </MenuItem>
+        <MenuItem value="">
+          <MenuItem value={12}>
+            <LocalOfferIcon />
+            Tag 2
           </MenuItem>
-          <MenuItem value="">
-            <MenuItem value={13}>
-              <LocalOfferIcon />
-              Tag 3
-            </MenuItem>
+        </MenuItem>
+        <MenuItem value="">
+          <MenuItem value={13}>
+            <LocalOfferIcon />
+            Tag 3
           </MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+        </MenuItem>
+      </Select>
+    </FormControl>
   );
 }

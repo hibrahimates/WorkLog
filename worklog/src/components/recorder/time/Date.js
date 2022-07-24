@@ -16,7 +16,7 @@ export default function Date() {
         onChange={(newValue) => {
           setValue(newValue);
         }}
-        renderInput={(params) => <TextField {...params} sx={{width: '150px',bgcolor:'#E2F0DE' }}/>
+        renderInput={(params) => <TextField {...params} sx={{bgcolor:'#E2F0DE' }}/>
         
         }
         />

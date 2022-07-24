@@ -13,8 +13,8 @@ export default function Project() {
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 180 }} size="large">
+   
+      <FormControl sx={{ minWidth: 150 }} size="large">
         <InputLabel id="demo-simple-select-autowidth-label">Project</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
@@ -39,6 +39,6 @@ export default function Project() {
           <MenuItem value={1236}>14001231234</MenuItem>
         </Select>
       </FormControl>
-    </div>
+    
   );
 }
