@@ -1,13 +1,13 @@
 import "./App.css";
-import Recorder from "./components/recorder/Recorder.js";
-import Lister from "./components/lister/Lister.js";
+import RecordCreater from "./components/recorder/RecordCreater.js";
+import RecordLister from "./components/lister/RecordLister.js";
 import { Box } from "@mui/system";
 
 function App() {
   return (
     <Box>
-      <Recorder />
-      <Lister />
+      <RecordCreater />
+      <RecordLister />
     </Box>
   );
 }
