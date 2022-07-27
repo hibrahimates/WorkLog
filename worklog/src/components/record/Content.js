@@ -16,16 +16,20 @@ export default function Content({ contentProp }) {
       noValidate
       autoComplete="off"
     >
+
       <TextField
         id="outlined-basic"
         label="What are you working on?"
         variant="outlined"
         fullWidth
+        //helperText="Baslik Gir"
         value={content}
+        //defaultValue={""}
         sx={{ bgcolor: "#E2F0DE" }}
-        onChange={(text) => {
-          setContent(text);
-          contentProp(text);
+        onChange={(event) => {
+          setContent(event.target.value);
+          contentProp(event.target.value);
+          console.log(event.target.value);
         }}
       />
     </Box>
