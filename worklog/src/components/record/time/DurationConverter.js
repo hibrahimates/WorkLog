@@ -16,9 +16,6 @@ export function getHumanReadableClock(ms) {
 }
 
 
-
-
-
 // 11:24:50 > 3126546451 şeklinde çevirir.
 export function getMilisecondClock(humanReadableClock) {
   const clockParts = humanReadableClock.split(":");

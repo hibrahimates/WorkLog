@@ -4,41 +4,58 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import * as React from "react";
 
-export default function Project() {
-  const [age, setAge] = React.useState("");
+export const projectList = [
+  "Project_1",
+  "Project_2",
+  "Project_3",
+  "Project_4",
+  "Project_5",
+  "Project_6",
+  "Project_7",
+  "Project_8",
+  "Project_9",
+  "Project_10",
+  "Project_11",
+  "Project_12",
+  "Project_13",
+  "Project_14",
+  "Project_15",
+  "Project_16",
+];
+
+export const none = () => {
+  return (
+    <MenuItem value="">
+      <em>None</em>
+    </MenuItem>
+  );
+};
+
+export default function Project({ projectProp }) {
+  const [projectName, setProjectName] = React.useState("");
 
   const handleChange = (event) => {
-    setAge(event.target.value);
-    // alert(age)
+    setProjectName(event.target.value);
+    projectProp(event.target.value);
   };
 
   return (
-   
-      <FormControl sx={{ minWidth: 150 }} size="large">
-        <InputLabel id="demo-simple-select-autowidth-label">Project</InputLabel>
-        <Select
-          labelId="demo-simple-select-autowidth-label"
-          id="demo-simple-select"
-          value={age}
-          onChange={handleChange}
-          autoWidth
-          label="Age"
-          sx={{bgcolor:'#E2F0DE'}}
-        >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={1042}>Project 1</MenuItem>
-          <MenuItem value={2143}>A Project 2</MenuItem>
-          <MenuItem value={1231}>B Project 3</MenuItem>
-          <MenuItem value={2222}>C Project 4</MenuItem>
-          <MenuItem value={2223}>D Project 5</MenuItem>
-          <MenuItem value={1233}>10003416854</MenuItem>
-          <MenuItem value={1234}>Berkan'ın Project</MenuItem>
-          <MenuItem value={1235}>14003552342</MenuItem>
-          <MenuItem value={1236}>14001231234</MenuItem>
-        </Select>
-      </FormControl>
-    
+    <FormControl sx={{ minWidth: 150 }} size="large">
+      <InputLabel id="demo-simple-select-autowidth-label">Project</InputLabel>
+      <Select
+        labelId="demo-simple-select-autowidth-label"
+        id="demo-simple-select"
+        value={projectName}
+        onChange={handleChange}
+        autoWidth
+        label="ProjectList"
+        sx={{ bgcolor: "#E2F0DE" }}
+      >
+        {none}
+        {projectList.map((element, index) => {
+          return <MenuItem value={index}>{element}</MenuItem>;
+        })}
+      </Select>
+    </FormControl>
   );
 }
