@@ -5,11 +5,7 @@ import Project from "./Project.js";
 import Tag from "./Tag.js";
 import Time from "./time/Time.js";
 
-export default function Record({
-  recordContentProp,
-  recordProjectProp,
-  tagProp,
-}) {
+export default function Record() {
   return (
     <Box
       sx={{
@@ -37,9 +33,9 @@ export default function Record({
         fontSize: 20,
       }}
     >
-      <Content contentProp={recordContentProp} />
-      <Project projectProp={recordProjectProp} />
-      <Tag  />
+      <Content />
+      <Project />
+      <Tag />
       <Time />
     </Box>
   );

@@ -1,39 +1,31 @@
 import Button from "@mui/material/Button";
 import * as React from "react";
-import { none } from "../record/Project";
+import MyContext from "./RecordCreater";
 
-export default function Create({
-  //content Props
-  readContentProp,
-  clearContentProp,
+export default function Create() {
 
-  //project Props
-  readProjectProp,
-  clearProjectProp,
-}) {
-  function clearContent() {
-    clearContentProp("");
-    clearProjectProp(none);
+  const handleClick = (myContextValue) => {
+    create(myContextValue);
+    clear(myContextValue);
+  };
+
+  function clear(clearValue) {
+    console.log(clearValue);
     console.log("temizlendi");
-
   }
 
-  function create() {
+  function create(creatValue) {
     console.log("create yapıldı.");
-    console.log("readProjectProp: " + readProjectProp);
-    console.log("readContentProp: " + readContentProp);
-       
+    console.log(creatValue);
   }
 
   return (
-    <Button
-      variant="outlined"
-      onClick={() => {
-        create();
-        clearContent();
+    <MyContext.Consumer>
+      {(myContextValue) => {
+        <Button variant="outlined" onClick={handleClick(myContextValue)}>
+          Create
+        </Button>
       }}
-    >
-      Create
-    </Button>
+    </MyContext.Consumer>
   );
 }
