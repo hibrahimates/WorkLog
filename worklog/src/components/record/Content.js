@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function Content({ contentProp }) {
+export default function Content({ contentProp, clearContent }) {
   const [content, setContent] = React.useState(""); //state
 
   return (
@@ -19,7 +19,8 @@ export default function Content({ contentProp }) {
 
       <TextField
         id="outlined-basic"
-        label="What are you working on?"
+        //label="What are you working on?"
+        label="Content"
         variant="outlined"
         fullWidth
         //helperText="Baslik Gir"

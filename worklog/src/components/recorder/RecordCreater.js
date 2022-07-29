@@ -1,12 +1,11 @@
-import CreateRecordButton from "./CreateRecordButton.js";
+import Create from "./Create.js";
 import { Box } from "@mui/system";
 import Record from "../record/Record";
 import React from "react";
 
-
-export default function RecordCreater() {
+export default function RecordCreater(props) {
   const [content, setContent] = React.useState("");
-    
+  const [project, setProject] = React.useState("");
 
   return (
     <Box
@@ -28,9 +27,22 @@ export default function RecordCreater() {
         fontSize: 20,
       }}
     >
-      <Record  recordContentProp={setContent} />
-      <CreateRecordButton createButtonProp={content}/>
+      <Record 
+      //content Props
+      recordContentProp={setContent}
+
+      //project Props
+      recordProjectProp={setProject} />
+
+      <Create
+        //content Props
+        readContentProp={content}
+        clearContentProp={setContent}
+
+        //project Props
+        readProjectProp={project}
+        clearProjectProp={setProject}
+      />
     </Box>
   );
 }
-
