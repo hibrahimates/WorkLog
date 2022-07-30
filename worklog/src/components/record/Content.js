@@ -1,18 +1,16 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import React, { useContext } from "react";
-import MyContext from "../MyContext";
+import RecordContext from "../RecordContext";
 
 export default function Content() {
-
-  const { content, setContent } = useContext(MyContext);
+  const { content, setContent } = useContext(RecordContext);
 
   const handleChange = (event) => {
     setContent(event.target.value);
-  }
+  };
 
   return (
-
     <Box
       //component="form"
       sx={{
@@ -31,7 +29,9 @@ export default function Content() {
         fullWidth
         value={content}
         sx={{ bgcolor: "#E2F2DE" }}
-        onChange={(event) => { handleChange(event) }}
+        onChange={(event) => {
+          handleChange(event);
+        }}
       />
     </Box>
   );

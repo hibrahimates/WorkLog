@@ -3,7 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import React, { useContext } from "react";
-import MyContext from "../MyContext";
+import RecordContext from "../RecordContext";
 
 export const projectList = [
   "Project_1",
@@ -34,8 +34,7 @@ export const NONE = () => {
 
 export default function Project() {
 
-  const { project, setProject } = useContext(MyContext);
-
+  const { project, setProject } = useContext(RecordContext);
 
   const handleChange = (event) => {
     setProject(event.target.value);
@@ -51,7 +50,7 @@ export default function Project() {
         onChange={(event) => { handleChange(event) }}
         autoWidth
         label="ProjectList"
-        sx={{ bgcolor: "#E2F0DE" }}
+        sx={{ bgcolor: "#E2F1DE" }}
       >
         {NONE}
         {projectList.map((element, index) => {

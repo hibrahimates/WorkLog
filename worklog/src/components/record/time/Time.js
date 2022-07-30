@@ -3,14 +3,10 @@ import Date from "./Date.js";
 import Duration from "./Duration.js";
 import FinishTime from "./FinishTime.js";
 import StartTime from "./StartTime.js";
-import {useState} from 'react';
 
+export const NONE = new Date();
 
 export default function Time() {
-  const[startValue,setStartValue]=useState("2000-01-01T00:00:00.000Z");
-  const[finishValue,setFinishValue]=useState("2000-01-01T00:00:00.000Z");
-  
-
 
   return (
     <Box
@@ -27,15 +23,15 @@ export default function Time() {
         gap: 2, // icindeki componentler arasi
         boxShadow: 12, // max 24
         borderRadius: 2,
-        bgcolor: "#B2F0C3",
+        //bgcolor: "#B2F0C3",
         color: "#6985B2",
         fontSize: 20,
       }}
     >
-      <StartTime startProp={setStartValue}/>
-      <FinishTime finishProp={setFinishValue} />
+      <StartTime />
+      <FinishTime />
       <Date />
-      <Duration startProp={startValue} finishProp={finishValue}/>
+      <Duration />
     </Box>
   );
 }

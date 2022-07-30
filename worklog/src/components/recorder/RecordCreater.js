@@ -1,13 +1,13 @@
 import { Box } from "@mui/system";
 import { default as React } from "react";
-import { MyContextProvider } from "../MyContext";
+import { RecordContextProvider } from "../RecordContext";
 import Record from "../record/Record";
 import Create from "./Create.js";
 
 export default function RecordCreater() {
 
   return (
-    <MyContextProvider>
+    <RecordContextProvider>
       <Box
         sx={{
           display: "flex", // flex | inline-flex | block-flex
@@ -22,7 +22,7 @@ export default function RecordCreater() {
           boxShadow: 12, // max 24
           borderRadius: 2,
 
-          bgcolor: "#B2F0C3",
+          bgcolor: "#F3D9B4",
           color: "#6985B2",
           fontSize: 20,
         }}
@@ -30,6 +30,6 @@ export default function RecordCreater() {
         <Record />
         <Create />
       </Box>
-    </MyContextProvider>
+    </RecordContextProvider>
   );
 }

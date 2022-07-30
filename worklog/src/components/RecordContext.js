@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react';
 
-const MyContext = createContext();
+const RecordContext = createContext();
 
-export const MyContextProvider = ({ children }) => {
+export const RecordContextProvider = ({ children }) => {
 
     const [content, setContent] = useState('');
 
@@ -10,13 +10,13 @@ export const MyContextProvider = ({ children }) => {
 
     const [tag, setTag] = useState('');
 
-    const [finishTime, setFinishTime] = useState('');
+    const [startTime, setStartTime] = useState(new Date());
 
-    const [startTime, setStartTime] = useState('');
+    const [finishTime, setFinishTime] = useState(new Date());
 
     const [duration, setDuration] = useState('');
 
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(new Date());
 
     const value = {
         content,
@@ -36,11 +36,11 @@ export const MyContextProvider = ({ children }) => {
     }
 
     return (
-        <MyContext.Provider value={value}>
+        <RecordContext.Provider value={value}>
             {children}
-        </MyContext.Provider>)
+        </RecordContext.Provider>)
 }
 
-export default MyContext;
+export default RecordContext;
 
 // consumer kullanmak yerine useContext kullanmak daha iyi bir yontem!

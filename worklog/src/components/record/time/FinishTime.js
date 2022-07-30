@@ -1,13 +1,12 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import TextField from "@mui/material/TextField";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DesktopTimePicker } from "@mui/x-date-pickers/DesktopTimePicker";
+import RecordContext from "../../RecordContext";
 
-export default function FinishTime({ finishProp }) {
-  const [value, setValue] = React.useState(
-    new Date("2018-01-01T00:00:00.000Z")
-  );
+export default function FinishTime() {
+  const { finishTime, setFinishTime } = useContext(RecordContext);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -15,10 +14,9 @@ export default function FinishTime({ finishProp }) {
         label="Finish Time"
         ampm={false}
         clearable
-        value={value}
+        value={finishTime}
         onChange={(newValue) => {
-          setValue(newValue);
-          finishProp(newValue);
+          setFinishTime(newValue);
         }}
         renderInput={(params) => (
           <TextField {...params} sx={{ bgcolor: "#E0F0DE" }} />

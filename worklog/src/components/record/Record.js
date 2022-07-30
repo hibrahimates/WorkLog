@@ -28,7 +28,7 @@ export default function Record() {
         boxShadow: 12, // max 24
         borderRadius: 2,
 
-        bgcolor: "#B2F0C3",
+        //bgcolor: "#B2F0C3",
         color: "#6985B2",
         fontSize: 20,
       }}
