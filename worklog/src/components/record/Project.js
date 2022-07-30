@@ -2,7 +2,8 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import * as React from "react";
+import React, { useContext } from "react";
+import MyContext from "../MyContext";
 
 export const projectList = [
   "Project_1",
@@ -23,7 +24,7 @@ export const projectList = [
   "Project_16",
 ];
 
-export const none = () => {
+export const NONE = () => {
   return (
     <MenuItem value="">
       <em>None</em>
@@ -31,12 +32,13 @@ export const none = () => {
   );
 };
 
-export default function Project({ projectProp }) {
-  const [projectName, setProjectName] = React.useState("");
+export default function Project() {
+
+  const { project, setProject } = useContext(MyContext);
+
 
   const handleChange = (event) => {
-    setProjectName(event.target.value);
-    projectProp(event.target.value);
+    setProject(event.target.value);
   };
 
   return (
@@ -45,13 +47,13 @@ export default function Project({ projectProp }) {
       <Select
         labelId="demo-simple-select-autowidth-label"
         id="demo-simple-select"
-        value={projectName}
-        onChange={handleChange}
+        value={project}
+        onChange={(event) => { handleChange(event) }}
         autoWidth
         label="ProjectList"
         sx={{ bgcolor: "#E2F0DE" }}
       >
-        {none}
+        {NONE}
         {projectList.map((element, index) => {
           return <MenuItem value={index}>{element}</MenuItem>;
         })}

@@ -1,31 +1,32 @@
 import Button from "@mui/material/Button";
-import * as React from "react";
-import MyContext from "./RecordCreater";
+import React, { useContext } from "react";
+import MyContext from "../MyContext";
+import { NONE as PROJECT_NONE } from './../record/Project';
 
 export default function Create() {
 
-  const handleClick = (myContextValue) => {
-    create(myContextValue);
-    clear(myContextValue);
-  };
+  const { content, setContent, project, setProject } = useContext(MyContext);
 
-  function clear(clearValue) {
-    console.log(clearValue);
+  const handleClick = () => {
+    create();
+    clear();
+  }
+
+  function create() {
+    console.log('content ' + content);
+    console.log('project ' + project);
+    console.log("create yapıldı.");
+  }
+
+  function clear() {
+    setContent("");
+    setProject(PROJECT_NONE);
     console.log("temizlendi");
   }
 
-  function create(creatValue) {
-    console.log("create yapıldı.");
-    console.log(creatValue);
-  }
-
   return (
-    <MyContext.Consumer>
-      {(myContextValue) => {
-        <Button variant="outlined" onClick={handleClick(myContextValue)}>
-          Create
-        </Button>
-      }}
-    </MyContext.Consumer>
-  );
+    <Button variant="outlined" onClick={handleClick}>
+      Create
+    </Button>
+  )
 }

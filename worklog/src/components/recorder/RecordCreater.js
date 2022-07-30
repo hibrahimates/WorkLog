@@ -1,47 +1,13 @@
 import { Box } from "@mui/system";
 import { default as React } from "react";
+import { MyContextProvider } from "../MyContext";
 import Record from "../record/Record";
 import Create from "./Create.js";
 
-// Context API
-export const MyContext = React.createContext();
-
 export default function RecordCreater() {
-  //
-  const ContextProvider = (props) => {
-    const [content, setContent] = React.useState("");
-    const [project, setProject] = React.useState("");
-    const [tag, setTag] = React.useState("");
-    const [finishTime, setFinishTime] = React.useState("");
-    const [startTime, setStartTime] = React.useState("");
-    const [duration, setDuration] = React.useState("");
-    const [date, setDate] = React.useState("");
-    return (
-      <MyContext.Provider
-        value={
-          (content,
-          setContent,
-          project,
-          setProject,
-          tag,
-          setTag,
-          startTime,
-          setStartTime,
-          finishTime,
-          setFinishTime,
-          duration,
-          setDuration,
-          date,
-          setDate)
-        }
-      >
-        {props.children}
-      </MyContext.Provider>
-    );
-  };
 
   return (
-    <ContextProvider>
+    <MyContextProvider>
       <Box
         sx={{
           display: "flex", // flex | inline-flex | block-flex
@@ -63,8 +29,7 @@ export default function RecordCreater() {
       >
         <Record />
         <Create />
-
       </Box>
-    </ContextProvider>
+    </MyContextProvider>
   );
 }
