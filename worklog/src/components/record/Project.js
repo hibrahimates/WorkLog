@@ -52,9 +52,8 @@ export default function Project() {
         label="ProjectList"
         sx={{ bgcolor: "#E2F1DE" }}
       >
-        {NONE}
         {projectList.map((element, index) => {
-          return <MenuItem value={index}>{element}</MenuItem>;
+          return <MenuItem key={index} value={element}>{element}</MenuItem>;
         })}
       </Select>
     </FormControl>

@@ -4,6 +4,7 @@ import RecordContext from "../RecordContext";
 import { Repository } from "../../repository/Repository";
 import { NONE as PROJECT_NONE } from "./../record/Project";
 import { NONE as TAG_NONE } from "./../record/Tag";
+import { refreshList } from "./../lister/RecordLister";
 
 export default function Create() {
   const {
@@ -26,7 +27,13 @@ export default function Create() {
     var storageObject = prepareStorageObject();
     Repository.create(storageObject);
     resetRecord();
+    refreshList();
   };
+
+  //ClearStorage 
+  // const handleClick = () => {
+  //   Repository.clear();
+  // };
 
   function prepareStorageObject() {
     let storageObject = {
@@ -39,6 +46,8 @@ export default function Create() {
       date: date,
       duration: duration,
     };
+
+    console.log(storageObject);
     return storageObject;
   }
 

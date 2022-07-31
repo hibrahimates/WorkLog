@@ -1,22 +1,20 @@
 import { Box } from "@mui/system";
 
-import LDuration from "./listDay/LDuration.js";
-import ListDay from "./listDay/ListDay.js";
-import LProjectName from "./listDay/LProjectName.js";
-import LStartAndFinishTime from "./listDay/LStartAndFinishTime.js";
-import LTag from "./listDay/LTag.js";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Repository } from "./../../repository/Repository";
+import ListDay from "./listDay/ListDay.js";
+
+export const refreshList = () => {};
 
 export default function RecordLister() {
   //
   const { records, setRecords } = useState([]);
+  //const { reload, setReload } = useState(false);
 
   useEffect(() => {
     var allRecords = Repository.readAll();
-    console.log(JSON.stringify(allRecords));
-    console.log("");
+    // console.log(JSON.stringify(allRecords));
+    // console.log("");
   });
 
   function listCreate() {
@@ -81,8 +79,6 @@ export default function RecordLister() {
       <ListDay sx={{ alignSelf: "baseline" }} />
       <br />
       {listCreate()}
-
-      <div></div>
     </Box>
   );
 }

@@ -41,7 +41,7 @@ export const LocalStorageRepository = {
 
   generateId: () => {
     var uniqueId = localStorage.getItem(uniqueIdKey);
-    console.log("__________________" + uniqueId);
+    //console.log("__________________" + uniqueId);
     if (uniqueId != null) {
       uniqueId = parseInt(uniqueId) + 1;
     } else {

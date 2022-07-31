@@ -10,7 +10,7 @@ export default function RecordCreater() {
     <RecordContextProvider>
       <Box
 
-      position="fixed"
+      //position="fixed"
         sx={{
           display: "flex", // flex | inline-flex | block-flex
           flexDirection: { xs: "column", sm: "row" },
