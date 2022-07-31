@@ -4,7 +4,7 @@ import Duration from "./Duration.js";
 import FinishTime from "./FinishTime.js";
 import StartTime from "./StartTime.js";
 
-export const NONE = new Date();
+export const NONE = () => { new Date() }; // TODO: munal: burada bir sikinti var
 
 export default function Time() {
 

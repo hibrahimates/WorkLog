@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from "react";
 import RecordContext from "../../RecordContext";
 
 export default function Duration() {
+  
   const { startTime, finishTime } = useContext(RecordContext);
   const { duration, setDuration } = useContext(RecordContext);
 
@@ -13,7 +14,6 @@ export default function Duration() {
     var durationInMs = finishMoment.diff(startMoment);
 
     setDuration(getHumanReadableClock(durationInMs));
-    console.log("duration:   " + duration);
   });
 
   //Milisecond cinsinden verilen değeri humanize eder.

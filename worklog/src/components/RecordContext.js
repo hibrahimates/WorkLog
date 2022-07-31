@@ -1,4 +1,7 @@
 import React, { createContext, useState } from 'react';
+import { NONE as PROJECT_NONE } from "./record/Project";
+import { NONE as TAG_NONE } from "./record/Tag";
+import { NONE as TIME_NONE } from "./record/time/Time";
 
 const RecordContext = createContext();
 
@@ -6,17 +9,17 @@ export const RecordContextProvider = ({ children }) => {
 
     const [content, setContent] = useState('');
 
-    const [project, setProject] = useState('');
+    const [project, setProject] = useState(PROJECT_NONE);
 
-    const [tag, setTag] = useState('');
+    const [tag, setTag] = useState(TAG_NONE);
 
-    const [startTime, setStartTime] = useState(new Date());
+    const [startTime, setStartTime] = useState(TIME_NONE);
 
-    const [finishTime, setFinishTime] = useState(new Date());
+    const [finishTime, setFinishTime] = useState(TIME_NONE);
 
-    const [duration, setDuration] = useState('');
+    const [duration, setDuration] = useState(TIME_NONE);
 
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(TIME_NONE);
 
     const value = {
         content,

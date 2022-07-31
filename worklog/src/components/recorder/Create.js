@@ -19,7 +19,7 @@ export default function Create() {
     setFinishTime,
     duration,
     date,
-    setDate,
+    setDate
   } = useContext(RecordContext);
 
   const handleClick = () => {
@@ -28,24 +28,35 @@ export default function Create() {
   };
 
   function create() {
-    console.log("content " + content);
-    console.log("project " + project);
-    console.log("tag " + tag);
-    console.log("startTime " + startTime);
-    console.log("finishTime " + finishTime);
-    console.log("duration " + duration);
-    console.log("date " + date);
+    let storageObject = {
+      content: content,
+      project: project,
+      tag: tag,
+      startTime: startTime,
+      finishTime: finishTime,
+      date: date,
+      duration: duration
+    }
+
+    console.log(storageObject);
+
+    // console.log("content " + content);
+    // console.log("project " + project);
+    // console.log("tag " + tag);
+    // console.log("startTime " + startTime);
+    // console.log("finishTime " + finishTime);
+    // console.log("duration " + duration);
+    // console.log("date " + date);
 
     console.log("create yapıldı.");
   }
 
   function clear() {
-    setContent("");
+    setContent('');
     setProject(PROJECT_NONE);
     setTag(TAG_NONE);
     setStartTime(TIME_NONE);
     setFinishTime(TIME_NONE);
-    //setDuration();
     setDate(TIME_NONE);
 
     console.log("temizlendi");
