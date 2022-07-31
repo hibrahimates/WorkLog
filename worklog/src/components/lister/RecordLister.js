@@ -5,8 +5,32 @@ import ListDay from "./listDay/ListDay.js";
 import LProjectName from "./listDay/LProjectName.js";
 import LStartAndFinishTime from "./listDay/LStartAndFinishTime.js";
 import LTag from "./listDay/LTag.js";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Repository } from "./../../repository/Repository";
 
 export default function RecordLister() {
+  //
+  const { records, setRecords } = useState([]);
+
+  useEffect(() => {
+    var allRecords = Repository.readAll();
+    console.log(JSON.stringify(allRecords));
+    console.log("");
+  });
+
+  function listCreate() {
+    var allRecords = Repository.readAll();
+
+    return (
+      <>
+        {allRecords.map((item) => {
+          return <p>{item}</p>;
+        })}
+      </>
+    );
+  }
+
   return (
     <Box
       sx={{
@@ -56,13 +80,9 @@ export default function RecordLister() {
     >
       <ListDay sx={{ alignSelf: "baseline" }} />
       <br />
+      {listCreate()}
 
-      <div>
-        <LProjectName />
-        <LTag />
-        <LStartAndFinishTime />
-        <LDuration />
-      </div>
+      <div></div>
     </Box>
   );
 }

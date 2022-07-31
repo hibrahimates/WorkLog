@@ -1,9 +1,9 @@
 import Button from "@mui/material/Button";
 import React, { useContext } from "react";
 import RecordContext from "../RecordContext";
+import { Repository } from "../../repository/Repository";
 import { NONE as PROJECT_NONE } from "./../record/Project";
 import { NONE as TAG_NONE } from "./../record/Tag";
-import { NONE as TIME_NONE } from "./../record/time/Time";
 
 export default function Create() {
   const {
@@ -19,45 +19,36 @@ export default function Create() {
     setFinishTime,
     duration,
     date,
-    setDate
+    setDate,
   } = useContext(RecordContext);
 
   const handleClick = () => {
-    create();
-    clear();
+    var storageObject = prepareStorageObject();
+    Repository.create(storageObject);
+    resetRecord();
   };
 
-  function create() {
+  function prepareStorageObject() {
     let storageObject = {
+      id: Repository.generateId(),
       content: content,
       project: project,
       tag: tag,
       startTime: startTime,
       finishTime: finishTime,
       date: date,
-      duration: duration
-    }
-
-    console.log(storageObject);
-
-    // console.log("content " + content);
-    // console.log("project " + project);
-    // console.log("tag " + tag);
-    // console.log("startTime " + startTime);
-    // console.log("finishTime " + finishTime);
-    // console.log("duration " + duration);
-    // console.log("date " + date);
-
-    console.log("create yapıldı.");
+      duration: duration,
+    };
+    return storageObject;
   }
 
-  function clear() {
-    setContent('');
+  function resetRecord() {
+    setContent("");
     setProject(PROJECT_NONE);
     setTag(TAG_NONE);
-    setStartTime(TIME_NONE);
-    setFinishTime(TIME_NONE);
-    setDate(TIME_NONE);
+    setStartTime(new Date());
+    setFinishTime(new Date());
+    setDate(new Date());
 
     console.log("temizlendi");
   }
